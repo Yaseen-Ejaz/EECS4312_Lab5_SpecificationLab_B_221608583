@@ -1,5 +1,5 @@
-## Student Name:
-## Student ID: 
+## Student Name: Yaseen Ejaz Ahmed
+## Student ID: 221608583
 
 """
 Public test suite for the meeting slot suggestion exercise.
@@ -46,3 +46,33 @@ def test_non_dict_request_raises():
         is_allocation_feasible(resources, requests)
 
 """TODO: Add at least 5 additional test cases to test your implementation."""
+
+def test_exact_capacity_match_multi_resource():
+    resources = {'cpu': 6, 'mem': 20}
+    requests = [{'cpu': 2, 'mem': 10}, {'cpu': 4, 'mem': 10}]
+    assert is_allocation_feasible(resources, requests) is True
+
+
+def test_empty_requests():
+    resources = {'cpu': 5}
+    requests = []
+    assert is_allocation_feasible(resources, requests) is True
+
+
+def test_empty_resources_with_requests():
+    resources = {}
+    requests = [{'cpu': 1}]
+    assert is_allocation_feasible(resources, requests) is False
+
+
+def test_negative_request_amount():
+    resources = {'cpu': 5}
+    requests = [{'cpu': -1}]
+    assert is_allocation_feasible(resources, requests) is False
+
+
+def test_float_values():
+    resources = {'cpu': 5.5}
+    requests = [{'cpu': 2.5}, {'cpu': 3.0}]
+    assert is_allocation_feasible(resources, requests) is True
+

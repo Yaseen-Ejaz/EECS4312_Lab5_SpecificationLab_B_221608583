@@ -1,6 +1,6 @@
 ## TODO:
-## Student Name:
-## Student ID: 
+## Student Name: Yaseen Ejaz Ahmed
+## Student ID: 221608583
 
 # Is Resource Allocation Feasible Lab Repository
 
